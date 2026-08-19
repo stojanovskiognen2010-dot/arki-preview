@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./img/logo-arki.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arki Building Surveyors | Residential, Commercial, Industrial</title>
+    <meta
+      name="description"
+      content="Independently owned building surveyors in Docklands, Melbourne. We assess, permit and certify across residential, commercial and industrial builds throughout Victoria."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Archivo stands in for Blauer Nue (commercial); Rubik matches. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./assets/index-NNcPP3OX.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script>
+      /*
+        Blank-page reporter. An empty page has two causes and neither announces
+        itself: this template opened directly, or the built bundle failing at
+        runtime. Waits to see whether React mounted and, if not, says which and
+        prints any error caught. Keyed off an empty #root rather than the
+        protocol, so it stays silent whenever the page is working.
+      */
+      (function () {
+        var errors = [];
+        addEventListener('error', function (e) {
+          errors.push(e.message || String((e.error && e.error.message) || e.error || ''));
+        });
+        addEventListener('DOMContentLoaded', function () {
+          setTimeout(function () {
+            var root = document.getElementById('root');
+            if (!root || root.children.length) return;
+            var isSource = !!document.querySelector('script[src$=".jsx"]');
+            var detail = isSource
+              ? '<p>This is the source template, and the built page could not be reached.</p>' +
+                '<p>Run <code>npm run build</code>, then open <code>dist/index.html</code>.</p>'
+              : errors.length
+                ? '<p>The page loaded but the app did not start:</p><pre style="white-space:pre-wrap;background:#f4f1ea;padding:.75rem;border-radius:6px">' +
+                  errors.join(String.fromCharCode(10)).replace(/</g, '&lt;') + '</pre>'
+                : '<p>The page loaded but the app did not start, and no JavaScript error was reported. Check the browser console.</p>';
+            document.body.innerHTML =
+              '<div style="font:16px/1.6 system-ui,sans-serif;max-width:36rem;margin:14vh auto;padding:0 1.5rem;color:#3d3d3d">' +
+              '<h1 style="font-size:1.35rem;margin:0 0 1rem;color:#0a5b74">Nothing rendered</h1>' +
+              detail + '</div>';
+          }, 2500);
+        });
+      })();
+    </script>
+  </body>
+</html>

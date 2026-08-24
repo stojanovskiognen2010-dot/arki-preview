@@ -11,12 +11,34 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Archivo stands in for Blauer Nue (commercial); Rubik matches. -->
+    <!--
+      Archivo stands in for Blauer Nue (commercial); Rubik matches.
+
+      Only the weights actually used: Archivo 600 carries every display size and
+      the buttons, Rubik 400 the body and 500 the eyebrows. The other six the
+      page used to request were downloaded and never drawn with.
+
+      Loaded as a preload that promotes itself to a stylesheet once it arrives,
+      rather than as a plain stylesheet link. A third-party stylesheet in the
+      head blocks the first paint on two round trips to another origin — here
+      that was the largest single item Lighthouse flagged. The families still
+      carry display=swap, and the preloader covers the page for its first 1.4s,
+      so the swap happens behind it rather than in front of the reader.
+    -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Rubik:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&family=Rubik:wght@400;500&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <script defer src="./assets/index-3Wc0j5S9.js"></script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@600&family=Rubik:wght@400;500&display=swap"
+      />
+    </noscript>
+    <script defer src="./assets/index-BhkFfztz.js"></script>
+    <link rel="stylesheet" href="./assets/style-CqWzpbhk.css">
   </head>
   <body>
     <div id="root"></div>
